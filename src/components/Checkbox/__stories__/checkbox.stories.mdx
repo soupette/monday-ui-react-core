@@ -75,15 +75,15 @@ Has 4 states: regular, hover, selected, and disabled.
         component:
           <DialogContentContainer className="monday-style-story-checkbox_wrapper">
             <Checkbox label="Item 1" name="Item 1" />
-            <Checkbox label="Item 2" name="Item 2" checked />
-            <Checkbox label="Item 3" name="Item 3" checked />
+            <Checkbox label="Item 2" name="Item 2" defaultChecked />
+            <Checkbox label="Item 3" name="Item 3" defaultChecked />
           </DialogContentContainer>,
         description: "Use checkboxes when one or more items can be selected."
       },
       negative: {
         component:
           <DialogContentContainer className="monday-style-story-checkbox_wrapper">
-            <Checkbox label="Item 1" name="Item 1" checked />
+            <Checkbox label="Item 1" name="Item 1" defaultChecked />
             <Checkbox label="Item 2" name="Item 2" disabled />
             <Checkbox label="Item 3" name="Item 3" disabled />
           </DialogContentContainer>,
@@ -92,13 +92,13 @@ Has 4 states: regular, hover, selected, and disabled.
     },
     {
       positive: {
-        component:<div className="monday-style-story-checkbox_border"><Checkbox label="Option" checked /></div>,
+        component:<div className="monday-style-story-checkbox_border"><Checkbox label="Option" defaultChecked /></div>,
         description: "Use the checkbox label’s prop to describe the option purpse."
       },
       negative: {
         component: [
           <div className="monday-style-story-checkbox_border">
-            <Checkbox className="monday-style-story-checkbox_minus-margin" checked />
+            <Checkbox className="monday-style-story-checkbox_minus-margin" defaultChecked />
           </div>,
           <div className="monday-style-story-checkbox_border">Option</div>
         ],
@@ -110,8 +110,8 @@ Has 4 states: regular, hover, selected, and disabled.
         component:
           <DialogContentContainer className="monday-style-story-checkbox_wrapper">
             <Checkbox label="Item 1" name="Item 1" />
-            <Checkbox label="Item 2" name="Item 2" checked />
-            <Checkbox label="Item 3" name="Item 3" checked />
+            <Checkbox label="Item 2" name="Item 2" defaultChecked />
+            <Checkbox label="Item 3" name="Item 3" defaultChecked />
           </DialogContentContainer>,
         description: "Place the checkbox on the left side of the label."
       },
@@ -124,11 +124,11 @@ Has 4 states: regular, hover, selected, and disabled.
             </div>
             <div className="monday-style-story-checkbox_inline-wrapper">
               <span>Item 2</span>
-              <Checkbox className="monday-style-story-checkbox_minus-margin" checked />
+              <Checkbox className="monday-style-story-checkbox_minus-margin" defaultChecked />
             </div>
             <div className="monday-style-story-checkbox_inline-wrapper">
               <span>Item 3</span>
-              <Checkbox className="monday-style-story-checkbox_minus-margin" checked />
+              <Checkbox className="monday-style-story-checkbox_minus-margin" defaultChecked />
             </div>
           </DialogContentContainer>,
         description:"Don’t change the position of the checkbox. Keep it to the left side of the label."
@@ -138,14 +138,14 @@ Has 4 states: regular, hover, selected, and disabled.
       positive: {
         component:
           <DialogContentContainer className="monday-style-story-checkbox_wrapper">
-            <Checkbox label="Only show incomplete items" checked />
+            <Checkbox label="Only show incomplete items" defaultChecked />
           </DialogContentContainer>,
         description: "Always keep a positive tone of voice."
       },
       negative: {
         component:
           <DialogContentContainer className="monday-style-story-checkbox_wrapper">
-            <Checkbox label="Hide done items" checked />
+            <Checkbox label="Hide done items" defaultChecked />
           </DialogContentContainer>,
         description: "Avoid negative language that makes the user check the box in order for something not to happen."
       }
@@ -158,7 +158,7 @@ Has 4 states: regular, hover, selected, and disabled.
 Allows the user to choose a single option. For example: accept terms of use.
 <Canvas>
   <Story name="Single checkbox">
-    <Checkbox checked label={
+    <Checkbox defaultChecked label={
       <>I agree to the <span className="element-type-link">Terms of Service</span> and <span className="element-type-link">Privacy Policy.</span></>
     } />
   </Story>
