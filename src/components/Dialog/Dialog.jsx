@@ -9,12 +9,13 @@ import { chainFunctions, convertToArray } from "../../utils/function-utils";
 import { DialogContent } from "./DialogContent/DialogContent";
 import { isInsideClass } from "../../utils/dom-utils";
 import "./Dialog.scss";
-import { Refable } from "../Refable/Refable";
+import { DialogRefable } from "./DialogRefable";
 import { HIDE_SHOW_EVENTS } from "./consts/dialog-show-hide-event";
 import { DialogPositions } from "../../constants/sizes";
 import { DIALOG_ANIMATION_TYPES } from "../../constants/AnimationTypes";
 
 const NOOP = () => {};
+const CHAIN_ATTRIBUTES = ["onBlur", "onKeyDown", "onClick", "onFocus", "onMouseDown", "onMouseEnter", "onMouseLeave"];
 
 export default class Dialog extends PureComponent {
   constructor(props) {
@@ -41,6 +42,10 @@ export default class Dialog extends PureComponent {
     this.onKeyDown = this.onKeyDown.bind(this);
     this.closeDialogOnEscape = this.closeDialogOnEscape.bind(this);
 
+    this.eventReferences = {};
+    CHAIN_ATTRIBUTES.forEach(attribute => {
+      this.eventReferences[attribute] = this[attribute];
+    });
     // Timeouts
     this.hideTimeout = null;
     this.showTimeout = null;
@@ -288,24 +293,20 @@ export default class Dialog extends PureComponent {
     if (!contentRendered) {
       return children;
     }
+
     return (
       <Manager>
         <Reference>
           {({ ref }) => {
             return (
-              <Refable
+              <DialogRefable
+                chainAttribues={CHAIN_ATTRIBUTES}
                 className={referenceWrapperClassName}
                 ref={ref}
-                onBlur={chainOnPropsAndInstance("onBlur", this, this.props)}
-                onKeyDown={chainOnPropsAndInstance("onKeyDown", this, this.props)}
-                onClick={chainOnPropsAndInstance("onClick", this, this.props)}
-                onFocus={chainOnPropsAndInstance("onFocus", this, this.props)}
-                onMouseDown={chainOnPropsAndInstance("onMouseDown", this, this.props)}
-                onMouseEnter={chainOnPropsAndInstance("onMouseEnter", this, this.props)}
-                onMouseLeave={chainOnPropsAndInstance("onMouseLeave", this, this.props)}
+                eventReferences={this.eventReferences}
               >
                 {children}
-              </Refable>
+              </DialogRefable>
             );
           }}
         </Reference>
@@ -554,7 +555,3 @@ Dialog.defaultProps = {
   hideWhenReferenceHidden: false,
   shoudlCallbackOnMount: false
 };
-
-function chainOnPropsAndInstance(name, instance, props) {
-  return chainFunctions([props[name], instance[name]], true);
-}

@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import React, { cloneElement, useRef, useCallback } from "react";
+import React, { cloneElement, useRef, useCallback, useMemo } from "react";
 import classNames from "classnames";
 import { CSSTransition } from "react-transition-group";
 import useOnClickOutside from "../../../hooks/useClickOutside";
@@ -47,6 +47,15 @@ export const DialogContent = React.forwardRef(
     useKeyEvent({ keys: KEYS, callback: onEsc });
     useOnClickOutside({ callback: onOutSideClick, ref });
 
+    const refFunction = useMemo(() => {
+      return React.Children.toArray(children).map(child => {
+        return cloneElement(child, {
+          onMouseEnter: chainFunctions([child.props.onMouseEnter, onMouseEnter]),
+          onMouseLeave: chainFunctions([child.props.onMouseLeave, onMouseLeave])
+        });
+      });
+    }, [children, onMouseLeave, onMouseEnter]);
+
     if (animationType) {
       transitionOptions.classNames = `monday-style-animation-${animationType}`;
     }
@@ -66,12 +75,7 @@ export const DialogContent = React.forwardRef(
             })}
             ref={ref}
           >
-            {React.Children.toArray(children).map(child => {
-              return cloneElement(child, {
-                onMouseEnter: chainFunctions([child.props.onMouseEnter, onMouseEnter]),
-                onMouseLeave: chainFunctions([child.props.onMouseLeave, onMouseLeave])
-              });
-            })}
+            {refFunction}
           </div>
         </CSSTransition>
       </span>

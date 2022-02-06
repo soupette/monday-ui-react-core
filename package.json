@@ -13,7 +13,7 @@
     "test:jest:update": "npm run test:jest -- -u",
     "test:jest:coverage": "npm run test:jest -- --coverage",
     "start": "npm run build-react-icons && webpack --mode production --watch --config webpack/default.config.js",
-    "build": "npm run build-react-icons && webpack --mode production --config webpack/default.config.js && npm run build:esm",
+    "build": "webpack --mode production --config webpack/default.config.js && npm run build:esm",
     "build:esm": "./scripts/build-esm.js",
     "storybook": "start-storybook -p 7007",
     "build-storybook": "build-storybook",
