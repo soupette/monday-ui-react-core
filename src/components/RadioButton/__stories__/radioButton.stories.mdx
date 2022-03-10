@@ -17,7 +17,7 @@ export const radioButtonTemplate = createComponentTemplate(RadioButton);
 
 <!--- Component documentation -->
 
-# RadioButton
+# Radio Button
 - [Overview](#overview)
 - [Props](#props)
 - [Usage](#usage)
@@ -31,7 +31,7 @@ export const radioButtonTemplate = createComponentTemplate(RadioButton);
 A radio represents an item in a single selection list.
 <Canvas>
   <Story name="Overview"
-         args={ {text: "Selection" } }>
+         args={ {text: "Selection", defaultChecked: true } }>
     { radioButtonTemplate.bind({}) }
   </Story>
 </Canvas>
@@ -68,7 +68,7 @@ Radio buttons have 3 states: regular, selected, and disabled.
         component:
           <DialogContentContainer className="monday-style-radio-buttons_wrapper">
             <RadioButton text="Item 1" name="radio-buttons-group-1" />
-            <RadioButton text="Item 2" name="radio-buttons-group-1" checked />
+            <RadioButton text="Item 2" name="radio-buttons-group-1" defaultChecked />
           </DialogContentContainer>,
         description:"Use radio buttons when only one item can be selected from a list."
       },
@@ -85,7 +85,7 @@ Radio buttons have 3 states: regular, selected, and disabled.
       positive: {
         component:
         <DialogContentContainer className="monday-style-radio-buttons_wrapper">
-            <RadioButton text="Item 1" name="radio-buttons-group-2" checked />
+            <RadioButton text="Item 1" name="radio-buttons-group-2" defaultChecked />
             <RadioButton text="Item 2" name="radio-buttons-group-2" />
             <RadioButton text="Item 3" name="radio-buttons-group-2" />
           </DialogContentContainer>,
@@ -105,13 +105,12 @@ Radio buttons have 3 states: regular, selected, and disabled.
 />
 
 ## Use cases and examples
-### Radio button in items list
-The user needs to select only one option.
+### Radio button for user configurations
 <Canvas>
-  <Story name="Radio button in items list">
+  <Story name="Radio button for user configurations">
     <div className="monday-style-radio-buttons_wrapper-column">
       <div>Inbox view options</div>
-      <RadioButton text="Inbox updates" name="radio-buttons-group-4" checked />
+      <RadioButton text="Inbox updates" name="radio-buttons-group-4" defaultChecked />
       <RadioButton text="I was mentioned" name="radio-buttons-group-4" />
       <RadioButton text="All updates" name="radio-buttons-group-4" />
     </div>

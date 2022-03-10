@@ -4,7 +4,7 @@ import { createComponentTemplate, createStoryMetaSettings } from "../../../story
 import { ExternalPage, Gallery } from "../../Icon/Icons"
 import { BUTTON, CHIP, BREADCRUBMS } from "../../../storybook/components/related-components/component-description-map";
 import { Link as StorybookLink } from "../../../storybook/components";
-import "./Link.stories.scss";
+import "./Link.stories.scss"; import {Flex} from "components";
 
 export const metaSettings = createStoryMetaSettings({
   component: Link,
@@ -36,7 +36,7 @@ export const linkTemplate = createComponentTemplate(Link);
 - [Feedback](#feedback)
 
 ## Overview
-Link is an actionable text componet with connection to another web pages.
+Links are accessible text elements used primarily for navigation.
 
 <Canvas>
   <Story name="Overview"
@@ -50,9 +50,9 @@ Link is an actionable text componet with connection to another web pages.
 
 ## Usage
 <UsageGuidelines guidelines={[
-  "Use links only as part of the text or scentence.",
-  "Use links in order to redirect people outside of the system.",
-  "Links should be short with a clear action name. read more, go to, etc...",
+    "Use links only as part of the text or sentence.",
+    "Use links in order to redirect people outside of the system.",
+    "Links should be short with a clear action name. read more, go to, etc...",
 ]}/>
 
 <Tip>If you need an action that does not have context with text <StorybookLink href="/?path=/docs/inputs-combobox--overview" size={StorybookLink.sizes.SMALL} withoutSpacing>Button</StorybookLink>.</Tip>
@@ -153,7 +153,7 @@ Link is an actionable text componet with connection to another web pages.
 Use this menu to allow a user to either select one or more items from the list.
 <Canvas>
   <Story name="Reference link">
-    <>Lorem Ipsum has been the industry's <Link text="standard" href="https://www.monday.com" /> dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </>
+    <Flex wrap>Lorem Ipsum has been the industry's <Link text="standard" href="https://www.monday.com" className="" /> dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </Flex>
   </Story>
 </Canvas>
 
