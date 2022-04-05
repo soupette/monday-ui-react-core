@@ -2,7 +2,6 @@
 import React, { useCallback, useState, useMemo, useRef, useLayoutEffect } from "react";
 import PropTypes from "prop-types";
 import cx from "classnames";
-import NOOP from "lodash/noop";
 import Dialog from "../Dialog/Dialog";
 import Menu from "../Icon/Icons/components/Menu";
 import DialogContentContainer from "../DialogContentContainer/DialogContentContainer";
@@ -299,11 +298,11 @@ MenuButton.propTypes = {
    * Dialog Alignment
    */
   startingEdge: PropTypes.string,
-  /*
+  /**
     Callback function to be called when the menu is shown
    */
   onMenuShow: PropTypes.func,
-  /*
+  /**
   Callback function to be called when the menu is shown
  */
   onMenuHide: PropTypes.func,
@@ -338,7 +337,7 @@ MenuButton.defaultProps = {
   component: Menu,
   size: MenuButtonSizes.SMALL,
   open: false,
-  onClick: NOOP,
+  onClick: () => {},
   zIndex: null,
   ariaLabel: "Menu",
   startingEdge: "bottom",
@@ -350,8 +349,8 @@ MenuButton.defaultProps = {
   dialogPosition: MenuButton.dialogPositions.BOTTOM_START,
   dialogShowTriggerIgnoreClass: undefined,
   dialogHideTriggerIgnoreClass: undefined,
-  onMenuShow: NOOP,
-  onMenuHide: NOOP,
+  onMenuShow: () => {},
+  onMenuHide: () => {},
   disabled: false,
   text: undefined,
   tooltipContent: undefined,

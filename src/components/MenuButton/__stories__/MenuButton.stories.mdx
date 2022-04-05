@@ -5,11 +5,9 @@ import { createComponentTemplate, createStoryMetaSettings } from "../../../story
 import { Menu, MenuItem, MenuTitle, MenuItemButton } from "../../index";
 import { BUTTON, ICON_BUTTON, SPLIT_BUTTON } from "../../../storybook/components/related-components/component-description-map";
 import { Favorite, Sun, Moon, AddSmall } from "../../Icon/Icons";
-import Bolt from "../../Icon/Icons/components/Bolt";
-import MoveArrowUp from "../../Icon/Icons/components/MoveArrowUp";
-import MoveArrowDown from "../../Icon/Icons/components/MoveArrowDown";
-import MoveArrowLeft from "../../Icon/Icons/components/MoveArrowLeft";
-import MoveArrowRight from "../../Icon/Icons/components/MoveArrowRight";
+import MoveArrowDown from "../../Icon/Icons/components/MoveArrowDown"; import {
+    StoryDescription
+} from "../../../storybook/components/story-description/story-description"; import {Flex} from "components";
 
 
 export const metaSettings = createStoryMetaSettings({
@@ -18,7 +16,7 @@ export const metaSettings = createStoryMetaSettings({
 });
 
 <Meta
-  title="Buttons/MenuButton"
+  title="Buttons/Menu Button"
   component={ MenuButton }
   argTypes={ metaSettings.argTypes }
   decorators={ metaSettings.decorators }
@@ -65,39 +63,52 @@ MenuButton is a component that opens a Dialog next to a button, the content of t
 ]}/>
 
 ## Variants
+
 ### Sizes
 <Canvas>
   <Story name="Sizes">
-    <MenuButton size={MenuButton.sizes.XXS}>
-        <Menu id="menu" size={Menu.sizes.MEDIUM}>
-             <MenuTitle caption="Look up, you might see" captionPosition={MenuTitle.positions.TOP} />
-             <MenuItem icon={Sun} onClick={NOOP} iconType={MenuItem.iconType.SVG} title="The sun" />
-       </Menu>
-    </MenuButton>
-    <MenuButton size={MenuButton.sizes.XS}>
-        <Menu id="menu" size={Menu.sizes.MEDIUM}>
-             <MenuTitle caption="Look up, you might see" captionPosition={MenuTitle.positions.TOP} />
-             <MenuItem icon={Sun} onClick={NOOP} iconType={MenuItem.iconType.SVG} title="The sun" />
-       </Menu>
-    </MenuButton>
-    <MenuButton size={MenuButton.sizes.SMALL}>
-        <Menu id="menu" size={Menu.sizes.MEDIUM}>
-             <MenuTitle caption="Look up, you might see" captionPosition={MenuTitle.positions.TOP} />
-             <MenuItem icon={Sun} onClick={NOOP} iconType={MenuItem.iconType.SVG} title="The sun" />
-       </Menu>
-    </MenuButton>
-    <MenuButton size={MenuButton.sizes.MEDIUM}>
-        <Menu id="menu" size={Menu.sizes.MEDIUM}>
-             <MenuTitle caption="Look up, you might see" captionPosition={MenuTitle.positions.TOP} />
-             <MenuItem icon={Sun} onClick={NOOP} iconType={MenuItem.iconType.SVG} title="The sun" />
-       </Menu>
-    </MenuButton>
-    <MenuButton size={MenuButton.sizes.LARGE}>
-        <Menu id="menu" size={Menu.sizes.MEDIUM}>
-             <MenuTitle caption="Look up, you might see" captionPosition={MenuTitle.positions.TOP} />
-             <MenuItem icon={Sun} onClick={NOOP} iconType={MenuItem.iconType.SVG} title="The sun" />
-       </Menu>
-    </MenuButton>
+      <Flex align={Flex.align.START} justify={Flex.justify.START}>
+          <StoryDescription description="XXS" vertical headerJustify={Flex.justify.CENTER}>
+            <MenuButton size={MenuButton.sizes.XXS}>
+                <Menu id="menu" size={Menu.sizes.MEDIUM}>
+                     <MenuTitle caption="Look up, you might see" captionPosition={MenuTitle.positions.TOP} />
+                     <MenuItem icon={Sun} onClick={NOOP} iconType={MenuItem.iconType.SVG} title="The sun" />
+               </Menu>
+            </MenuButton>
+          </StoryDescription>
+          <StoryDescription description="XS" vertical headerJustify={Flex.justify.CENTER}>
+            <MenuButton size={MenuButton.sizes.XS}>
+                <Menu id="menu" size={Menu.sizes.MEDIUM}>
+                     <MenuTitle caption="Look up, you might see" captionPosition={MenuTitle.positions.TOP} />
+                     <MenuItem icon={Sun} onClick={NOOP} iconType={MenuItem.iconType.SVG} title="The sun" />
+               </Menu>
+            </MenuButton>
+          </StoryDescription>
+          <StoryDescription description="Small" vertical headerJustify={Flex.justify.CENTER}>
+            <MenuButton size={MenuButton.sizes.SMALL}>
+                <Menu id="menu" size={Menu.sizes.MEDIUM}>
+                     <MenuTitle caption="Look up, you might see" captionPosition={MenuTitle.positions.TOP} />
+                     <MenuItem icon={Sun} onClick={NOOP} iconType={MenuItem.iconType.SVG} title="The sun" />
+               </Menu>
+            </MenuButton>
+          </StoryDescription>
+          <StoryDescription description="Medium" vertical headerJustify={Flex.justify.CENTER}>
+            <MenuButton size={MenuButton.sizes.MEDIUM}>
+                <Menu id="menu" size={Menu.sizes.MEDIUM}>
+                     <MenuTitle caption="Look up, you might see" captionPosition={MenuTitle.positions.TOP} />
+                     <MenuItem icon={Sun} onClick={NOOP} iconType={MenuItem.iconType.SVG} title="The sun" />
+               </Menu>
+            </MenuButton>
+          </StoryDescription>
+          <StoryDescription description="Large" vertical headerJustify={Flex.justify.CENTER}>
+            <MenuButton size={MenuButton.sizes.LARGE}>
+                <Menu id="menu" size={Menu.sizes.MEDIUM}>
+                     <MenuTitle caption="Look up, you might see" captionPosition={MenuTitle.positions.TOP} />
+                     <MenuItem icon={Sun} onClick={NOOP} iconType={MenuItem.iconType.SVG} title="The sun" />
+               </Menu>
+            </MenuButton>
+      </StoryDescription>
+      </Flex>
   </Story>
 </Canvas>
 
