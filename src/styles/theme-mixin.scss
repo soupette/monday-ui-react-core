@@ -18,6 +18,8 @@ $riverstone-gray: #f5f6f8;
 $ui-grey: #e6e9ef;
 $asphalt: #676879;
 $higlight: #dff0ff;
+
+/* stylelint-disable custom-property-pattern */
 $theme: (
   "primary-color": $basic-blue,
   "primary-text-on-primary": $snow-white,
@@ -95,6 +97,8 @@ $theme-var: (
   "box-shadow-medium": var(--box-shadow-medium),
   "box-shadow-large": var(--box-shadow-large)
 );
+/* stylelint-enable custom-property-pattern */
+
 
 @mixin theme-prop($property: color, $color-variable: primary-text-color, $important: false) {
   @if $important {

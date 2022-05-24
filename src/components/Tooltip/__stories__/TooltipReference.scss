@@ -8,10 +8,14 @@
   justify-content: center;
   transition: background-color 0.15s ease-in;
   &:hover {
+    /* stylelint-disable custom-property-pattern */
     background-color: var(--color-wolf_gray);
+    /* stylelint-enable custom-property-pattern */
   }
   .tooltip-reference-dot {
+    /* stylelint-disable custom-property-pattern */
     background-color: var(--color-mud_black);
+    /* stylelint-enable custom-property-pattern */
     width: 6px;
     height: 6px;
     margin: 0 2px;

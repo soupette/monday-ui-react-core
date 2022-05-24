@@ -153,7 +153,9 @@
           &-on-primary-color {
             .monday-style-split-button__secondary-button {
               border-left: 1px solid;
+              /* stylelint-disable custom-property-pattern */
               border-color: var(--color-ui_grey);
+              /* stylelint-enable custom-property-pattern */
             }
           }
         }
