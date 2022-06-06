@@ -1,0 +1,5 @@
+@include keyframe(spin-reverse) {
+  to {
+    transform: rotate(-360deg);
+  }
+}

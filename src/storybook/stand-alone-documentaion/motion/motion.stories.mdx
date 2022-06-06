@@ -1,13 +1,144 @@
-import { Meta } from "@storybook/addon-docs";
-import { ComponentName } from "../../components";
-import { ComingSoon } from "../../components/coming-soon/coming-soon";
+import {Meta} from "@storybook/addon-docs";
+import {ComponentName} from "../../components";
+import MotionDemo from "./motion-demo/motion-demo"
+import {ComingSoon} from "../../components/coming-soon/coming-soon";
+import classes from "./motionStory.module.scss";
 
 <Meta
-  title="Foundations/Motion"
+    title="Foundations/Motion"
 />
 
 <ComponentName withFoundationBackground>
-  Motion
+    Motion
 </ComponentName>
 
-<ComingSoon />
+<ComingSoon/>
+
+## Duration
+Focus on item to see Duration of selected animation
+### Duration props
+<section className={classes.motionDemoWrapper}>
+    Productive Short, Bounce in
+    <MotionDemo
+        duration={MotionDemo.durations.PRODUCTIVE_SHORT}
+        keyframe={MotionDemo.keyframes.BOUNCE_IN}/>
+</section>
+<section className={classes.motionDemoWrapper}>
+    Productive Medium, Bounce in
+    <MotionDemo
+        duration={MotionDemo.durations.PRODUCTIVE_MEDIUM}
+        keyframe={MotionDemo.keyframes.BOUNCE_IN}/>
+</section>
+<section className={classes.motionDemoWrapper}>
+    Productive Long, Bounce in
+    <MotionDemo
+        duration={MotionDemo.durations.PRODUCTIVE_LONG}
+        keyframe={MotionDemo.keyframes.BOUNCE_IN}/>
+</section>
+<section className={classes.motionDemoWrapper}>
+    Expressive Short, Bounce in
+    <MotionDemo
+        duration={MotionDemo.durations.EXPRESSIVE_SHORT}
+        keyframe={MotionDemo.keyframes.BOUNCE_IN}/>
+</section>
+<section className={classes.motionDemoWrapper}>
+    Expressive Long, Bounce in
+    <MotionDemo
+        duration={MotionDemo.durations.EXPRESSIVE_LONG}
+        keyframe={MotionDemo.keyframes.BOUNCE_IN}/>
+</section>
+
+## Timing Function
+Focus on item to see Timing of selected animation
+### Timing Function props
+<section className={classes.motionDemoWrapper}>
+    Enter, Expressive Long, Bounce in
+    <MotionDemo
+        timing={MotionDemo.timings.ENTER}
+        duration={MotionDemo.durations.EXPRESSIVE_LONG}
+        keyframe={MotionDemo.keyframes.BOUNCE_IN}/>
+</section>
+<section className={classes.motionDemoWrapper}>
+    Exist, Expressive Long, Bounce in
+    <MotionDemo
+        timing={MotionDemo.timings.EXIT}
+        duration={MotionDemo.durations.EXPRESSIVE_LONG}
+        keyframe={MotionDemo.keyframes.BOUNCE_IN}/>
+</section>
+<section className={classes.motionDemoWrapper}>
+    Transition, Expressive Long, Bounce in
+    <MotionDemo
+        timing={MotionDemo.timings.TRANSITION}
+        duration={MotionDemo.durations.EXPRESSIVE_LONG}
+        keyframe={MotionDemo.keyframes.BOUNCE_IN}/>
+</section>
+<section className={classes.motionDemoWrapper}>
+    Emphasize, Expressive Long, Bounce in
+    <MotionDemo
+        timing={MotionDemo.timings.EMPHASIZE}
+        duration={MotionDemo.durations.EXPRESSIVE_LONG}
+        keyframe={MotionDemo.keyframes.BOUNCE_IN}/>
+</section>
+
+## Keyframes
+Focus on item to see keyframe animation
+### KeyFrames Examples
+
+<section className={classes.motionDemoWrapper}>
+    Bounce In
+    <MotionDemo keyframe={MotionDemo.keyframes.BOUNCE_IN}/>
+</section>
+<section className={classes.motionDemoWrapper}>
+    Bounce Small
+    <MotionDemo keyframe={MotionDemo.keyframes.BOUNCE_SMALL}/>
+</section>
+<section className={classes.motionDemoWrapper}>
+    Bounce Twice
+    <MotionDemo keyframe={MotionDemo.keyframes.BOUNCE_TWICE}/>
+</section>
+<section className={classes.motionDemoWrapper}>
+    Expand Out
+    <MotionDemo keyframe={MotionDemo.keyframes.EXPAND_OUT}/>
+</section>
+<section className={classes.motionDemoWrapper}>
+    Fade In
+    <MotionDemo keyframe={MotionDemo.keyframes.FADE_IN}/>
+</section>
+<section className={classes.motionDemoWrapper}>
+    Fade In Expand
+    <MotionDemo keyframe={MotionDemo.keyframes.FADE_IN_EXPAND}/>
+</section>
+<section className={classes.motionDemoWrapper}>
+    Fade In Out
+    <MotionDemo keyframe={MotionDemo.keyframes.FADE_IN_OUT}/>
+</section>
+<section className={classes.motionDemoWrapper}>
+    Fade Out
+    <MotionDemo keyframe={MotionDemo.keyframes.FADE_OUT}/>
+</section>
+<section className={classes.motionDemoWrapper}>
+    Fade Out Collapse
+    <MotionDemo keyframe={MotionDemo.keyframes.FADE_OUT_COLLAPSE}/>
+</section>
+<section className={classes.motionDemoWrapper}>
+    Nudge
+    <MotionDemo keyframe={MotionDemo.keyframes.NUDGE}/>
+</section>
+<section className={classes.motionDemoWrapper}>
+    Shake
+    <MotionDemo keyframe={MotionDemo.keyframes.SHAKE}/>
+</section>
+<section className={classes.motionDemoWrapper}>
+    Slide Up In
+    <MotionDemo keyframe={MotionDemo.keyframes.SLIDE_UP_IN}/>
+</section>
+<section className={classes.motionDemoWrapper}>
+    Spin
+    <MotionDemo keyframe={MotionDemo.keyframes.SPIN}/>
+</section>
+<section className={classes.motionDemoWrapper}>
+    Spin Reverse
+    <MotionDemo keyframe={MotionDemo.keyframes.SPIN_REVERSE}/>
+</section>
+
+

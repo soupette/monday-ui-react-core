@@ -1,0 +1,14 @@
+@include keyframe(bounce-twice) {
+  0% {
+    transform: scale(0);
+  }
+  30% {
+    transform: scale(1.1);
+  }
+  70% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

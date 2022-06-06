@@ -1,0 +1,15 @@
+@include keyframe(nudge) {
+  0%,
+  33%,
+  66%,
+  100% {
+    transform: translateX(0);
+  }
+  16%,
+  83% {
+    transform: translateX(6px);
+  }
+  50% {
+    transform: translateX(-6px);
+  }
+}
